@@ -1,12 +1,11 @@
 <template>
   <div id="app">
     <div class="button-container" >
-      <button class="button1" @click="currentComponent = 'Component1'">Тест 1</button>
-      <button class="button2" @click="currentComponent = 'Component2'">Тест 2</button>
-      <button class="button3" @click="currentComponent = 'Component3'">Тест 3</button>
-      <button class="button4" @click="currentComponent = 'Component4'">Тест 4</button>
-      <button class="button5" @click="currentComponent = 'Component5'">Тест 5</button>
-
+      <button class="butt button1" @click="currentComponent = 'Component1'">Тест 1</button>
+      <button class="butt button2" @click="currentComponent = 'Component2'">Тест 2</button>
+      <button class="butt button3" @click="currentComponent = 'Component3'">Тест 3</button>
+      <button class="butt button4" @click="currentComponent = 'Component4'">Тест 4</button>
+      <button class="butt button5" @click="currentComponent = 'Component5'">Тест 5</button>
     </div>
     <div class="component-container ">
     <component :is="currentComponent"></component>
@@ -49,9 +48,8 @@ export default {
 </script>
 
 <style>
-.button5 {
-            background-color: #f2aa4b; 
-            color: black;
+.butt{
+  color: black;
             border: none; 
             padding: 15px 13px; 
             text-align: center; 
@@ -62,62 +60,26 @@ export default {
             cursor: pointer; 
             border-radius: 8px; 
             transition: background-color 0.3s; 
+}
+.button5 {
+            background-color: #f2aa4b; 
+            
         }
 .button4 {
             background-color: #dfab55; 
-            color: black;
-            border: none; 
-            padding: 15px 13px; 
-            text-align: center; 
-            text-decoration: none;
-            display: inline-block; 
-            font-size: 25px;
-            margin: 4px 2px; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            transition: background-color 0.3s; 
+            
         }
 .button3 {
             background-color: #87b17f; 
-            color: black;
-            border: none; 
-            padding: 15px 13px; 
-            text-align: center; 
-            text-decoration: none;
-            display: inline-block; 
-            font-size: 25px;
-            margin: 4px 2px; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            transition: background-color 0.3s; 
+            
         }
 .button2 {
             background-color: #4ab49c; 
-            color: black;
-            border: none; 
-            padding: 15px 13px; 
-            text-align: center; 
-            text-decoration: none;
-            display: inline-block; 
-            font-size: 25px;
-            margin: 4px 2px; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            transition: background-color 0.3s; 
+            
         }
 .button1 {
             background-color: #08b9bc; 
-            color: black;
-            border: none; 
-            padding: 15px 13px; 
-            text-align: center; 
-            text-decoration: none;
-            display: inline-block; 
-            font-size: 25px;
-            margin: 4px 2px; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            transition: background-color 0.3s; 
+            
         }
 
 .button-container {
@@ -137,12 +99,24 @@ export default {
   align-items: baseline;
   text-align: center;
 }
+
+
+@media (max-width: 600px) {
+.button-container{
+ padding: 0%;
+}
 .fixerr {
   position: fixed; 
-  top: 20%; 
+  top: 10%;
   left: 0;
   right: 0;
   padding: 10px 0; 
   z-index: 1000; 
 }
+  .butt {
+    padding: 2px 1px; 
+    width: 15rem; 
+    height: 2rem;/* Кнопки занимают всю ширину */
+    font-size: 12px; /* Увеличиваем размер шрифта кнопок */
+  }}
 </style>

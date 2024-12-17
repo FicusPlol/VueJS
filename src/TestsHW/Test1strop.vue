@@ -13,10 +13,10 @@
 <span :style="{ color: word.color }">{{ word.word }}</span>
 <input type="checkbox" v-model="selectedWords" :value="word.id" />
 </div >
-<div class='word-item'>
-    <button v-if="words.length > 0" class='button' @click="checkSelected">Проверить выбранные слова</button>
+<div class=''>
+    <button v-if="words.length > 0" class='butt button' @click="checkSelected">Проверка</button>
     <h2 v-if="resultMessage">{{ resultMessage }}</h2>
-    <button v-if="resultMessage" class='button' @click="nextQuiz">Следующий тест</button></div>
+    <button v-if="resultMessage" class='butt button' @click="nextQuiz">Следующий тест</button></div>
   </div>
 </div>
 </template>
@@ -181,40 +181,82 @@ export default {
 
 </script>
 
-<style>
+<style >
 
 .word-item {
   font-weight: bold;
   margin: 10px 0;
   font-size: 23px;
 }
-.button {
-            background-color: #5092dd; 
-            color: black;
+.but{
+  color: black;
             border: none; 
             padding: 15px 13px; 
             text-align: center; 
             text-decoration: none;
             display: inline-block; 
-            font-size: 25px;
+            font-size: 18px;
             margin: 4px 2px; 
             cursor: pointer; 
             border-radius: 8px; 
             transition: background-color 0.3s; 
+}
+.button {
+            background-color: #5092dd; 
         }
 input[type=checkbox]
 {
-  size: 2ch;
+  size: 2px;
   transform: scale(2);
   padding: -5px;
   margin: 10px;
 }
-.fixerr {
-  position: fixed; 
-  top: 20%;
-  left: 0;
-  right: 0;
-  padding: 10px 0; 
-  z-index: 1000; 
+
+@media (max-width: 600px) {
+  #app {
+    padding: 2px;
+    width:80%;
+    height:70%
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  .word-item {
+    flex-direction: column; /* Изменяем направление на вертикальное */
+    align-items: flex-start;
+    font-size: 14px; /* Выравниваем элементы по левому краю */
+  }
+
+  .word-item span {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    margin:2rem 0 /* Добавляем отступ между текстом и чекбоксом */
+  }
+  input[type=checkbox]
+{
+  size: 4px;
+  transform: scale(2);
+  padding: -1px;
+  margin: 2px;
 }
+  .fixerr{
+  padding: 0rem; 
+  z-index: 1000; 
+  }
+  .but {
+    padding: 2px 1px; 
+    width: 10rem; 
+    height: 2rem;/* Кнопки занимают всю ширину */
+    font-size: 1rem; /* Увеличиваем размер шрифта кнопок */
+  }}
 </style>

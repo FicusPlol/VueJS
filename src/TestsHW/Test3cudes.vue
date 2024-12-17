@@ -49,6 +49,7 @@ export default {
       isTimerActive: false, 
       remainingTime: 60, 
       timerInterval: null, 
+      randomColor:''
     };
   },
   beforeUnmount() {
@@ -88,7 +89,6 @@ export default {
       const randomColorKey = colorKeys[Math.floor(Math.random() * colorKeys.length)];
       this.targetColor = this.colors[randomColorKey][Math.floor(Math.random() * this.colors[randomColorKey].length)];
 
-      console.log('get',randomColor)
       const allColors = Object.values(this.colors).flat();
       this.options = this.getRandomColors(allColors, this.targetColor, 12);
     },
@@ -124,6 +124,14 @@ export default {
 </script>
 
 <style scoped>
+.fixerr {
+  position: fixed; 
+  top: 20%;
+  left: 0;
+  right: 0;
+  padding: 10px 0; 
+  z-index: 1000; 
+}
 .target-color {
   width: 150px;
   height: 150px;
@@ -152,4 +160,80 @@ export default {
   align-items: center; 
   margin: 20px 0; 
 }
+
+@media (max-width: 600px) {
+  .target-color {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border: 2px solid #000;
+}
+.options {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+.color-option {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.score {
+  margin-top: 10px;
+  font-size: 10px;
+}
+.color-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin: 3px 0; 
+}
+  #app {
+    padding: 2px;
+    width:80%;
+    height:70%
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  .word-item {
+    flex-direction: column; /* Изменяем направление на вертикальное */
+    align-items: flex-start;
+    font-size: 14px; /* Выравниваем элементы по левому краю */
+  }
+
+  .word-item span {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    margin:2rem 0 /* Добавляем отступ между текстом и чекбоксом */
+  }
+  input[type=checkbox]
+{
+  size: 4px;
+  transform: scale(2);
+  padding: -1px;
+  margin: 2px;
+}
+  .fixerr{
+  padding: 0rem; 
+  z-index: 1000; 
+  }
+  .but {
+    padding: 2px 1px; 
+    width: 10rem; 
+    height: 2rem;/* Кнопки занимают всю ширину */
+    font-size: 1rem; /* Увеличиваем размер шрифта кнопок */
+  }}
 </style>

@@ -205,12 +205,55 @@ export default {
   display: inline-block;
   margin: 10px;
 }
-.fixerr {
-  position: fixed; 
-  top: 20%; 
-  left: 0;
-  right: 0;
-  padding: 10px 0; 
+
+
+@media (max-width: 600px) {
+  img {
+  max-width: 50%; /* Ограничивает ширину изображения до 100% от родительского элемента */
+  height: 50%; /* Сохраняет пропорции изображения */
+}
+  .image {
+  display: inline-block;
+  margin:7px;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+  #app {
+    padding: 2px;
+    width:80%;
+    height:70%
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  .word-item {
+    flex-direction: column; 
+    align-items: flex-start;
+    font-size: 14px; 
+  }
+
+  .word-item span {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    margin:2rem 0 
+  }
+
+  .fixerr{
+  padding: 0rem; 
   z-index: 1000; 
+  }
 }
 </style>

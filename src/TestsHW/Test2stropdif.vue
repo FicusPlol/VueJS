@@ -184,7 +184,7 @@ export default {
 
 </script>
 
-<style>
+<style >
 
 .word-item {
   font-weight: bold;
@@ -199,9 +199,8 @@ export default {
   padding: 10px 0; 
   z-index: 1000; 
 }
-.button {
-            background-color: #5092dd; 
-            color: black;
+.butt{
+  color: black;
             border: none; 
             padding: 15px 13px; 
             text-align: center; 
@@ -214,6 +213,10 @@ export default {
             transition: background-color 0.3s; 
         
 }
+.button {
+            background-color: #5092dd; 
+            
+}
 input[type=checkbox]
 {
   size: 2ch;
@@ -222,4 +225,51 @@ input[type=checkbox]
   margin: 10px;
 }
 
+@media (max-width: 600px) {
+  #app {
+    padding: 2px;
+    width:80%;
+    height:70%
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  .word-item {
+    flex-direction: column; /* Изменяем направление на вертикальное */
+    align-items: flex-start;
+    font-size: 14px; /* Выравниваем элементы по левому краю */
+  }
+
+  .word-item span {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    margin:2rem 0 /* Добавляем отступ между текстом и чекбоксом */
+  }
+  input[type=checkbox]
+{
+  size: 4px;
+  transform: scale(2);
+  padding: -1px;
+  margin: 2px;
+}
+  .fixerr{
+  padding: 0rem; 
+  z-index: 1000; 
+  }
+  .but {
+    padding: 2px 1px; 
+    width: 10rem; 
+    height: 2rem;/* Кнопки занимают всю ширину */
+    font-size: 1rem; /* Увеличиваем размер шрифта кнопок */
+  }}
 </style>

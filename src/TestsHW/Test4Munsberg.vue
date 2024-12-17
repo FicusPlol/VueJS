@@ -8,11 +8,11 @@
     <br>
     <h1>Тест по методике Мюнстерберга</h1> <h1>Всего набрано {{ allpoints }}</h1>
     <p class="word-item">{{ points }}/{{ maxim }}</p>
-    <button class='button' @click="generateText">Создать текст</button>
+    <button class='butt button' @click="generateText">Создать текст</button>
     <h2 class="word-item" id="fontt">{{ generatedText }}  </h2>
     <input v-model="userInput" class="styled-input" placeholder="Введите слово" />
     <br>
-    <button class='button' @click="checkWord">Проверить слово</button>
+    <button class='butt button' @click="checkWord">Проверить слово</button>
     <p class="word-item" ></p>
     <h2  class="word-item" v-if="isCorrect !== null">{{ resultMessage }}</h2>
   </div>
@@ -119,7 +119,7 @@ export default {
     align-items: baseline;
   }
 .word-item {
-
+  word-break: break-all; 
   margin: 10px 0;
   font-size: 26px;
 }
@@ -166,4 +166,46 @@ export default {
   padding: 10px 0; 
   z-index: 1000; 
 }
+
+@media (max-width: 600px) {
+  #app {
+    padding: 2px;
+    width:80%;
+    height:70%
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  .word-item {
+    flex-direction: column; 
+    align-items: flex-start;
+    font-size: 14px; 
+  }
+
+  .word-item span {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    margin:2rem 0 
+  }
+
+  .fixerr{
+  padding: 0rem; 
+  z-index: 1000; 
+  }
+  .but {
+    padding: 2px 1px; 
+    width: 10rem; 
+    height: 2rem;
+    font-size: 1rem; 
+  }}
 </style>
